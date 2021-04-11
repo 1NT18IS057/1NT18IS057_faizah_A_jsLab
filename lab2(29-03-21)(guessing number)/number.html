@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            h1{
+                font-size:larger;
+                font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                color:rgb(51, 81, 99);
+                text-align: center;
+            }
+            h2{
+                font-size:medium;
+                font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                color:rgb(129, 173, 201);
+                text-align: center;
+            }
+
+            form{
+                text-align: center;
+
+            }
+            p{
+                font-size:large;
+                font-family: 'Courier New', Courier, monospace;
+            }
+        </style>
+        <title> Number check</title>
+        <script>
+            var turn=0;
+            var lastturn=3;
+            var cs=Math.floor((Math.random() * 10)+ 1);
+            function myfunc() {
+                var n=document.getElementById("number").value;
+                
+
+                if(turn==lastturn)
+                {
+                    document.write("Expected number was : "+cs+" .");
+                    document.write(" Sorry you're out of guesses.");
+                }
+                if(n==cs) {
+                    alert("correct guess");
+                }
+                else if(n<cs)
+                {
+                    alert("Try guessing higher number than "+n);
+                    turn++;
+                }
+                else if(n>cs)
+                {
+                    alert("Try guessing lower number than "+n);
+                    turn++;
+                }
+                else {
+                    alert("Wrong guess");
+                    turn++;
+
+                     }
+                    }
+        </script>
+    </head>
+    <body>
+        <h1>Guess the correct number!</h1>
+        <h2> Enter a number from 1 to 10:</h2>
+        <form>
+            <input type="number" id="number" name="number" value="1">
+            <input type="button" onclick="myfunc()" value="Try guessing">
+        </form>
+    </body>
+</html>
