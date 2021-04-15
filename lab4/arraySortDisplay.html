@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       
+        <script>
+            var arr2 = [];
+            var arr3 = [];
+            var arr4 = [];
+            var arr5 = [];
+            var arr6 = [];
+
+            function func(){
+                var value = document.getElementById("num").value;
+                console.log(value);
+
+                var pattern = new RegExp('^[0-9]+$');
+
+                if(pattern.test(value)){
+                    console.log("number entered")
+                    arr3.push(value);
+                    arr3 = arr3.sort();
+                    console.log(arr3);
+
+                }
+                else{
+                    console.log("string entered")
+                    arr4.push(value);
+                    arr4 = arr4.sort();
+
+                }
+                document.getElementById("numbers").innerHTML = arr3;
+                document.getElementById("strings").innerHTML = arr4;
+            
+            }
+        </script>
+        <style>
+            #mouseTarget {
+                box-sizing:border-box;
+                width:20rem;
+                border:3px solid rgb(85, 82, 82);
+                background-color: rgb(134, 139, 190);
+                margin: auto;
+                
+            }
+
+            
+           body {background-color: rgb(222, 215, 223);
+            background-image:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiVpvsGz9xyJVxcMO0ogjTZd97zTOwsbzZyUtj-HC38KUqcY1gEbRfjPuXMJd1YH_hb_Y&usqp=CAU");
+            background-repeat:repeat;
+            background-position:top;}
+
+
+           
+        </style>
+        <script>
+            function color1(){
+                document.getElementById("mouseTarget").style.backgroundColor = 'rgb(240, 223, 234)';
+                mouseTarget.style.border = '5px solid black';
+            }
+            function color2(){
+                document.getElementById("mouseTarget").style.backgroundColor = 'rgb(134, 139, 190)';
+                mouseTarget.style.border = '1px solid black';
+                
+
+            }
+           
+        </script>
+
+    </head>
+    <body>
+        <div id='mouseTarget' onmouseover="color1()" onmouseout="color2()" >
+            <center><p>Enter number/string: </p><input  id="num"></center><br/>
+            <center> <button onclick="func()">add to arrays</button></center><br/>
+            <center><p>numbers after sorting are : </p></center>
+            <center><p id="numbers"></p></center> 
+            <center> <p>strings after sorting are: </p></center>
+            <center> <p id="strings"></p></center> 
+        </div>
+
+    </body>
+</html>
