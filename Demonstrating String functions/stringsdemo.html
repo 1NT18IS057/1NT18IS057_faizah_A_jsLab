@@ -20,14 +20,16 @@
             {
                 var str1 = document.getElementById("lentxt").value;
                 var a=str1.length;
-                document.getElementById("ln").innerHTML =a;
+                document.getElementById("lentxt").value =a;
+                document.getElementById("lentxt").disabled = true;
             }
 
             function lwrc()
             {
                 var str2 = document.getElementById("lwrtxt").value;
                 var a=str2.toLowerCase();
-                document.getElementById("low").innerHTML =a;
+                document.getElementById("lwrtxt").value =a;
+                document.getElementById("lwrtxt").disabled = true;
 
             }
 
@@ -35,8 +37,8 @@
             {
                 var str3 = document.getElementById("uprtxt").value;
                 var a=str3.toUpperCase();
-                document.getElementById("up").innerHTML =a;
-
+                document.getElementById("uprtxt").value =a;
+                document.getElementById("uprtxt").disabled = true;
             }
 
 
@@ -44,7 +46,8 @@
             {
             var txt = document.getElementById("fintxt").value;
             var pos = str.search(`${txt}`)
-            document.getElementById("tx").innerHTML = pos;
+            document.getElementById("fintxt").value = pos;
+            document.getElementById("fintxt").disabled = true;
              }
 
 
@@ -52,7 +55,8 @@
             {
                 var inctext = document.getElementById("intxt").value;
                 var a=str.includes(`${inctext}`);
-                document.getElementById("incl").innerHTML =a;
+                document.getElementById("intxt").value =a;
+                document.getElementById("intxt").disabled = true;
 
             }
 
@@ -60,7 +64,8 @@
             {
                 var strtext = document.getElementById("strtxt").value;
                 var a=str.startsWith(`${strtext}`);
-                document.getElementById("star").innerHTML =a;
+                document.getElementById("strtxt").value =a;
+                document.getElementById("strtxt").disabled = true;
 
             }
 
@@ -68,7 +73,8 @@
             {
                 var endtext = document.getElementById("endtxt").value;
                 var a=str.endsWith(`${endtext}`);
-                document.getElementById("end").innerHTML =a;
+                document.getElementById("endtxt").value=a;
+                document.getElementById("endtxt").disabled = true;
 
             }
 
@@ -76,16 +82,16 @@
             {
                 var searchtext = document.getElementById("srchtext").value;
                 var a=str.search(`${searchtext}`);
-                document.getElementById("sear").innerHTML =a;
-
+                document.getElementById("srchtext").value =a;
+                document.getElementById("srchtext").disabled = true;
             }
 
             function indx()
             {
                 var idxtext = document.getElementById("indextext").value;
                 var a=str.indexOf(`${idxtext}`);
-                document.getElementById("index").innerHTML =a;
-
+                document.getElementById("indextext").value =a;
+                document.getElementById("indextext").disabled = true;
             }
 
             function slc(){
@@ -93,6 +99,8 @@
             var num2 = document.getElementById("slc2").value;
             var res = str.slice(num1,num2);
             document.getElementById("sc").innerHTML = res;
+            document.getElementById("slc1").disabled = true;
+            document.getElementById("slc2").disabled = true;
         }
 
 
@@ -104,62 +112,53 @@
         <p>To find length of the string</p>
         <input type="text" id="lentxt" placeholder="Enter the string:" />
         <button onmouseover="len()">Length</button>
-        <p id="ln"></p>
     </div>
     <div class="strlwr">
         <p>To convert given string to lower case</p>
         <input type="text" id="lwrtxt" placeholder="Enter the string:" />
         <button onmouseover="lwrc()">To LowerCase</button>
-        <p id="low"></p>
     </div>
     
     <div class="strupr">
         <p>To convert given string to upper case</p>
         <input type="text" id="uprtxt" placeholder="Enter the string:" />
-        <button onmouseover="uprc()">To UpperCase</button>
-        <p id="up"></p></br>
+        <button onmouseover="uprc()">To UpperCase</button></br>
     </div>
    
-    <p>String is: web lab tutorial</p></br>
+</br><b><p>String is: web lab tutorial</p></b>
     <div class="find">
     <p>To find out the first occurrence of a specified text in the string</p>
     <input type="text" id="fintxt" placeholder="Enter the string:" />
     <button onmouseover="findTxt()">Search</button>
-    <p id="tx"></p>
     </div>
 
     <div class="strinc">
         <input type="text" id="intxt" placeholder="Enter a string:" />
         <button onmouseover="inc()">Check if given string present or not</button>
-        <p id="incl"></p>
     </div>
     
     <div class="startwith">
         <input type="text" id="strtxt" placeholder="Enter a string:" />
         <button onmouseover="strw()">Check if given string starts with string mentioned or not</button>
-        <p id="star"></p>
     </div>
     
     <div class="endswith">
         <input type="text" id="endtxt" placeholder="Enter a string:" />
         <button onmouseover="endw()">Check if given string ends with string mentioned or not</button>
-        <p id="end"></p>
     </div>
     
     <div class="search">
         <input type="text" id="srchtext" placeholder="Enter a string:" />
         <button onmouseover="srch()">Search for a string</button>
-        <p id="sear"></p>
     </div>
     
     <div class="index">
         <input type="text" id="indextext" placeholder="Enter a string:" />
         <button onmouseover="indx()">Display index of a string</button>
-        <p id="index"></p>
     </div>
     
     <div class="slice">
-    <p>Enter start and end position pf string for slicing function</p>
+    <p>Enter start and end position of string for slicing function</p>
     <input type="number" id="slc1" placeholder="Enter starting index:" />&nbsp;<input type="number" id="slc2" placeholder="Enter ending index:" />
     <button onmouseover="slc()">Search</button>
     <p id="sc"></p>
