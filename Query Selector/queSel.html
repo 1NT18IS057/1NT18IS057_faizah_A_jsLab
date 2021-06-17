@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>querySelectorAll demo</title>
+    <style type="text/css">
+        button{
+
+            margin:10px;
+            margin: auto;
+        }
+        h1{
+            margin: auto;
+            font-weight: 500;
+            font: 1em sans-serif;
+            color: rgb(51, 27, 56);
+
+        }
+        h2{
+            margin: auto;
+            font-weight: 500;
+            font: 1em sans-serif;
+            color: rgb(150, 185, 240);
+            font-size:initial;
+
+        }
+
+    </style>
+</head>
+<body>
+
+   <u><h1 >QUERY SELECTOR ALL DEMO</h1></u> </br>
+    <b><h2>Try these buttons to change the background color</h2></b>
+    </br><button class="b1">Change Color1</button>
+    </br></br><button class ="b1">Change Color2</button></br></br>
+
+    <script>
+        const btn=document.querySelectorAll('button');
+
+        function random(number)
+        {
+            return Math.floor(Math.random()*number);
+        }
+
+        function bgChange()
+        {
+            const col='rgb(' + random(255) + ',' + random(255) + ',' + random(255) +')';
+            document.body.style.backgroundColor =  col;
+        }
+
+        for( var i = 0;i<btn.length;i++)
+        {
+            btn[i].onblur = bgChange;
+        }
+
+
+   </script>
+
+</body>
+</html>
