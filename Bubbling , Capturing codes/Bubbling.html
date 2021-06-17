@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query Selector,Event handling,bubbling</title>
+    <style type="text/css">
+        button{
+
+            margin:10px;
+            margin: auto;
+        }
+
+        .styleClass
+        {
+            display: table-cell;
+            border: 1px solid blueviolet;
+            padding: 20px;
+            text-align: center;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="styleClass" onclick="alert('DIV Clicked')">DIV Clicked
+    <span class="styleClass" onclick="alert('SPAN Clicked')">SPAN Clicked
+    <input type="button" value="Click Me" onclick="alert('BUTTON Clicked')" />
+    </span>
+    </div>
+   </script>
+
+</body>
+</html>

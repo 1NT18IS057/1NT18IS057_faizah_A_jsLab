@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capturing event</title>
+    <style type="text/css">
+    p1,h1,div1
+    {
+        display: table-cell;
+        border: 1px solid rgb(42, 172, 133);
+        padding: 20px;
+        text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <div class="same">
+        <label style="font-size: 30px;font-style: italic;">Capturing</label>
+       <div id="div1" class="class1"><h2>div</h2>
+        <h1 id="h1" class="class1">head
+           <p1 id="p1" class="class1">para</p1>
+        </h1>
+       </div>
+       </div>
+       <div class="same">
+</body>
+
+<script type="text/javascript">
+var divs =document.getElementsByTagName("div");
+var divs= document.getElementById("div1");
+    divs.addEventListener("click",function(){alert("you clicked div element")},true);
+    var p1= document.getElementById("p1");
+    p1.addEventListener("click",function(){alert("you clicked paragraph element")},true);
+    var h1= document.getElementById("h1");
+    h1.addEventListener("click",function(){alert("you clicked head element")},true);
+</script>
+</html>
